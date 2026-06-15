@@ -1,0 +1,140 @@
+<html>
+<head>
+<Title>Show form</Title>
+<style>
+ .hidden
+ {
+	display:none;
+ }
+</style>
+
+<script type="text/javascript">
+function showHide() {
+    var checkbox = document.getElementById("chk");
+    var longForm = document.getElementById("longForm");
+
+    if (checkbox.checked)
+        longForm.style.display = "block";
+    else
+        longForm.style.display = "none";
+}
+
+function Validate(theForm) {
+	var empty="";
+
+	if (theForm.surname.value =="")
+	 empty += "Surname\n";
+
+	if (theForm.Fname.value =="")
+	 empty += "First name\n";
+
+	if (theForm.email.value =="")
+	 empty += "Email\n";
+
+	// Hobbies
+	var hobbyChecked=false;
+	var hobbies=theForm.hobbies;
+	if(hobbies.length){
+		for(var i=0;i<hobbies.length;i++){if(hobbies[i].checked) hobbyChecked=true;}
+	} else { if(hobbies.checked) hobbyChecked=true;}
+	if(!hobbyChecked) empty+="Hobbies\n";
+
+	// Age
+	var ageChecked=false;
+	var ages=theForm.age;
+	if(ages.length){
+		for(var i=0;i<ages.length;i++){if(ages[i].checked) ageChecked=true;}
+	} else { if(ages.checked) ageChecked=true;}
+	if(!ageChecked) empty+="Age\n";
+
+	// Payment
+	if (theForm.Select_Payment.value =="") empty += "Payment\n";
+
+	// Color
+	if (theForm.color.value =="" || theForm.color.value=="Select") empty += "Color\n";
+
+	if ( empty !=""){
+	  alert("You missed the following essential elements\n"
+		+ empty
+		+ "Please complete and resubmit");
+	  return false; // prevent submission
+	}
+
+	return confirm('Ready to submit the information');
+}
+
+function confirmReset(){
+	return confirm('Do you really want to clear the form?');
+}
+</script>
+</head>
+
+<BODY text=white bgColor=#9900cc>
+
+<H2>Join our product mailing list</H2>
+<P>Complete this form to be added to our mailing list for product information.</P>
+
+<!-- Checkbox to show/hide the long form -->
+<input type="checkbox" id="chk" onclick="showHide()">
+<label for="chk">Click to show or hide the mailing list form</label>
+
+<!-- Long form that is hidden by default -->
+<Form id="longForm" style="display:none" onreset="return confirmReset()" onsubmit="return Validate(this)">
+<H3><u>Please join our Mailing List</u></H3>
+<p><u>Please complete the form below and submit</u></p>
+
+<p>
+Surname<input Type="Text" Size="20" name="surname">
+First name<input Type="Text" Size="20" name="Fname"><br>
+Email &nbsp &nbsp;&nbsp;<input Type="Text" Size="20" name="email">
+</p>
+
+<p>Address<br>
+<TEXTAREA rows="5" cols="50"></TEXTAREA></p>
+
+<HR>
+
+<u>What are your hobbies? Please choose from the list below</u><br>
+<input type="checkbox" name="hobbies">Football<br>
+<input type="checkbox" name="hobbies">Swimming<br>
+<input type="checkbox" name="hobbies">Computer Games<br>
+<input type="checkbox" name="hobbies">Movies<br>
+<input type="checkbox" name="hobbies">Driving<br>
+<input type="checkbox" name="hobbies">Basketball<p>
+
+<u>What age range are you?</u><br>
+<input type="radio" name="age">Under 18<br>
+<input type="radio" name="age">18 to 25<br>
+<input type="radio" name="age">26 to 35<br>
+<input type="radio" name="age">Over 35<p>
+
+<u>Please select your preferred method of payment</u><br>
+<Select name="Select_Payment" size="4" MULTIPLE><br>
+<Option>Cash
+<Option>Cheque
+<Option>Credit or debit card
+<Option>Gift Card
+<Option>Apple Pay
+<Option>Direct Debit
+</Select>
+
+<p>
+
+<u>Please select your favourite colour</u><br>
+<Select name="color">
+<Option value="Select">Select your favourite colour</option>
+<Option value="Bl">Black</option>
+<Option value="Gr">Green</option>
+<Option value="Yl">Yellow</option>
+<Option value="R">Red</option><br>
+
+<p>
+
+<P><INPUT type=submit value=Submit name=Sub>
+<INPUT type=reset value=Clear><P>
+
+<HR>
+</Form>
+
+</BODY>
+</HTML>

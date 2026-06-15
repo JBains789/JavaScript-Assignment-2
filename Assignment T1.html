@@ -1,0 +1,307 @@
+<html>
+<head>
+<title>
+
+JavaScript Assignment
+
+</title>
+
+<style>
+
+ .hidden
+ {
+	display:none;
+ }
+
+</style>
+
+
+<script type="text/javascript">
+document.writeln("<H3/>This page contains the completed Tasks for the JavaScript Assignment");
+
+ 
+
+
+function showHide()
+  {
+   var checkbox=document.getElementById("chk");
+   var hiddeninputs=document.getElementsByClassName("hidden");
+
+   for(var i=0;i !=hiddeninputs.length;i++)
+    {
+	if(checkbox.checked)
+     {
+      hiddeninputs[i].style.display="block";
+     }
+
+	else
+     {
+      hiddeninputs[i].style.display="none";
+     }
+    }
+   }
+
+</script>
+</Head>
+
+
+<script type="text/javascript" language="JavaScript">
+<!-- hide
+var date = new Date ("July 17, 2026 00:00:00");
+
+function CalcRemaining(theForm) {
+var now = new Date();
+
+var difference = parseInt((date.getTime() - now.getTime())/1000);
+var secs = difference % 60;
+
+difference = parseInt(difference / 60);
+var minutes = difference % 60;
+
+difference = parseInt(difference / 60);
+var hours = difference % 24;
+
+difference = parseInt(difference / 24);
+var days = difference;
+
+theForm.txtDays.value = days;
+theForm.txtHours.value = hours;
+theForm.txtMins.value = minutes;
+theForm.txtSecs.value = secs;
+
+setTimeout("CalcRemaining(document.clock)", 250);
+
+}
+
+</script>
+</head>
+
+<body onload="CalcRemaining(document.clock)">
+
+<form name="clock">
+<table>
+<tr align="CENTER">
+<td colspan="4">
+<h3>Time left to submit assignment:</h3>
+</td>
+</tr>
+
+<tr align="CENTER">
+<td width="25%">Days</td>
+<td width="25%">Hours</td>
+<td width="25%">Minutes</td>
+<td width="25%">Seconds</td>
+</td>
+
+
+<tr align="CENTER">
+<td><input type="TEXT" name="txtDays" size="4" onfocus="blur"()"></td>
+<td><input type="TEXT" name="txtHours" size="4" onfocus="blur"()"></td>
+<td><input type="TEXT" name="txtMins" size="4" onfocus="blur"()"></td>
+<td><input type="TEXT" name="txtSecs" size="4" onfocus="blur"()"></td>
+</td>
+</tr>
+</table>
+</form>
+
+
+<Body>
+
+
+
+<script>
+document.writeln("<H3/>Task1C");
+</script>
+
+
+<style>
+ .hidden
+ {
+	display:none;
+ }
+</style>
+
+<script type="text/javascript">
+function showHide() {
+    var checkbox = document.getElementById("chk");
+    var longForm = document.getElementById("longForm");
+
+    if (checkbox.checked)
+        longForm.style.display = "block";
+    else
+        longForm.style.display = "none";
+}
+
+function Validate(theForm) {
+	var empty="";
+
+	if (theForm.surname.value =="")
+	 empty += "Surname\n";
+
+	if (theForm.Fname.value =="")
+	 empty += "First name\n";
+
+	if (theForm.email.value =="")
+	 empty += "Email\n";
+
+	// Hobbies
+	var hobbyChecked=false;
+	var hobbies=theForm.hobbies;
+	if(hobbies.length){
+		for(var i=0;i<hobbies.length;i++){if(hobbies[i].checked) hobbyChecked=true;}
+	} else { if(hobbies.checked) hobbyChecked=true;}
+	if(!hobbyChecked) empty+="Hobbies\n";
+
+	// Age
+	var ageChecked=false;
+	var ages=theForm.age;
+	if(ages.length){
+		for(var i=0;i<ages.length;i++){if(ages[i].checked) ageChecked=true;}
+	} else { if(ages.checked) ageChecked=true;}
+	if(!ageChecked) empty+="Age\n";
+
+	// Payment
+	if (theForm.Select_Payment.value =="") empty += "Payment\n";
+
+	// Color
+	if (theForm.color.value =="" || theForm.color.value=="Select") empty += "Color\n";
+
+	if ( empty !=""){
+	  alert("You missed the following essential elements\n"
+		+ empty
+		+ "Please complete and resubmit");
+	  return false; // prevent submission
+	}
+
+	return confirm('Ready to submit the information');
+}
+
+function confirmReset(){
+	return confirm('Do you really want to clear the form?');
+}
+</script>
+</head>
+
+<BODY text=white bgColor=#9900cc>
+
+<H2>Join our product mailing list</H2>
+<P>Complete the form by clicking on the checkbox to fill in the form and you will be added to our mailing list for product information.</P>
+<p>Try selecting some text after filling in one of the following:</P>
+
+<p>
+<ul>
+	<li>Surname</li>
+	<li>First Name</li>
+	<li>Email</li>
+	<li>Address</li>
+</ul></p>
+
+
+
+<input type="checkbox" id="chk" onclick="showHide()">
+<label for="chk">Click to show or hide the mailing list form</label>
+
+
+<Form id="longForm" style="display:none" onreset="return confirmReset()" onsubmit="return Validate(this)">
+<H3><u>Please join our Mailing List</u></H3>
+<p><u>Please complete the form below and submit</u></p>
+
+<p>
+Surname<input Type="Text" Size="20" name="surname">
+First name<input Type="Text" Size="20" name="Fname"><br>
+Email &nbsp &nbsp;&nbsp;<input Type="Text" Size="20" name="email">
+</p>
+
+<p>Address<br>
+<TEXTAREA rows="5" cols="50"></TEXTAREA></p>
+
+<HR>
+
+<u>What are your hobbies? Please choose from the list below</u><br>
+<input type="checkbox" name="hobbies">Football<br>
+<input type="checkbox" name="hobbies">Swimming<br>
+<input type="checkbox" name="hobbies">Computer Games<br>
+<input type="checkbox" name="hobbies">Movies<br>
+<input type="checkbox" name="hobbies">Driving<br>
+<input type="checkbox" name="hobbies">Basketball<p>
+
+<u>What age range are you?</u><br>
+<input type="radio" name="age">Under 18<br>
+<input type="radio" name="age">18 to 25<br>
+<input type="radio" name="age">26 to 35<br>
+<input type="radio" name="age">Over 35<p>
+
+<u>Please select your preferred method of payment</u><br>
+<Select name="Select_Payment" size="4" MULTIPLE><br>
+<Option>Cash
+<Option>Cheque
+<Option>Credit or debit card
+<Option>Gift Card
+<Option>Apple Pay
+<Option>Direct Debit
+</Select>
+
+<p>
+
+<u>Please select your favourite colour</u><br>
+<Select name="color">
+<Option value="Select">Select your favourite colour</option>
+<Option value="Bl">Black</option>
+<Option value="Gr">Green</option>
+<Option value="Yl">Yellow</option>
+<Option value="R">Red</option><br>
+
+<p>
+
+<P><INPUT type=submit value=Submit name=Sub>
+<INPUT type=reset value=Clear><P>
+
+<HR>
+</Form>
+
+
+
+<script>
+document.writeln("<H3/>Task 1B and 1D");
+</script>
+
+<h2>What can JavaScript do?.</h2>
+
+<p>JavaScript can change HTML attribute values.</p>
+
+<p>In this case JavaScript changes the value of the src (source) of an image.</p>
+
+<button onclick="document.getElementById ('myImage').src='pic_bulbon.gif'">Turn on the light</button>
+
+<img id="myImage" src="pic_bulboff.gif" style="width:100px" 
+     align="left"
+     onmouseover="this.align='center';"
+     onmouseout="this.align='left';">
+
+<button onclick="document.getElementById ('myImage').src='pic_bulboff.gif'">Turn off the light</button>
+
+
+
+
+<script>
+document.forms['longForm'].surname.onselect = function() {
+    alert("You selected text in Surname!. This triggered the onSelect function within this page. This page uses many other event handlers just like the onSelect event handler.");
+};
+
+document.forms['longForm'].Fname.onselect = function() {
+    alert("You selected text in First name! This triggered the onSelect function within this page. This page uses many other event handlers just like the onSelect event handler.");
+};
+
+document.forms['longForm'].email.onselect = function() {
+    alert("You selected text in Email! This triggered the onSelect function within this page. This page uses many other event handlers just like the onSelect event handler.");
+};
+
+document.forms['longForm'].getElementsByTagName('textarea')[0].onselect = function() {
+    alert("You selected text in Address! This triggered the onSelect function within this page. This page uses many other event handlers just like the onSelect event handler.");
+};
+</script>
+
+
+</Body>
+</html>
+

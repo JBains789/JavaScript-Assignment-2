@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>eg5.htm - Enhanced Xmas Countdown</title>
+
+<script type="text/javascript" language="JavaScript">
+<!-- hide
+var xmas = new Date ("December 25, 2026 00:00:00");
+
+function CalcRemaining(theForm) {
+var now = new Date();
+
+var difference = parseInt((xmas.getTime() - now.getTime())/1000);
+var secs = difference % 60;
+
+difference = parseInt(difference / 60);
+var minutes = difference % 60;
+
+difference = parseInt(difference / 60);
+var hours = difference % 24;
+
+difference = parseInt(difference / 24);
+var days = difference;
+
+theForm.txtDays.value = days;
+theForm.txtHours.value = hours;
+theForm.txtMins.value = minutes;
+theForm.txtSecs.value = secs;
+
+setTimeout("CalcRemaining(document.clock)", 250);
+
+}
+//end hiding-->
+</script>
+</head>
+
+<body onload="CalcRemaining(document.clock)">
+
+<form name="clock">
+<table>
+<tr align="CENTER">
+<td colspan="4">
+<h3>Xmas countdown</h3>
+</td>
+</tr>
+
+<tr align="CENTER">
+<td width="25%">Days</td>
+<td width="25%">Hours</td>
+<td width="25%">Minutes</td>
+<td width="25%">Seconds</td>
+</td>
+
+
+<tr align="CENTER">
+<td><input type="TEXT" name="txtDays" size="4" onfocus="blur"()"></td>
+<td><input type="TEXT" name="txtHours" size="4" onfocus="blur"()"></td>
+<td><input type="TEXT" name="txtMins" size="4" onfocus="blur"()"></td>
+<td><input type="TEXT" name="txtSecs" size="4" onfocus="blur"()"></td>
+</td>
+</tr>
+</table>
+</form>
+
+</body>
+</html>

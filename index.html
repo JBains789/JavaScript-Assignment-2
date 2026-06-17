@@ -186,7 +186,7 @@ function confirmReset(){
 
 <H2>Join our product mailing list</H2>
 <P>Complete the form by clicking on the checkbox to fill in the form and you will be added to our mailing list for product information.</P>
-<p>Try selecting some text after filling in one of the following:</P>
+<p>Try selecting some text or changing after filling in one of the following:</P>
 
 <p>
 <ul>
@@ -207,13 +207,13 @@ function confirmReset(){
 <p><u>Please complete the form below and submit</u></p>
 
 <p>
-Surname<input Type="Text" Size="20" name="surname">
-First name<input Type="Text" Size="20" name="Fname"><br>
-Email &nbsp &nbsp;&nbsp;<input Type="Text" Size="20" name="email">
+Surname<input Type="Text" Size="20" name="surname" onchange="alert('Surname field changed!')">
+First name<input Type="Text" Size="20" name="Fname" onchange="alert('First name field changed!')"><br>
+Email &nbsp &nbsp;&nbsp <input type="text" size="20" name="email" onchange="alert('Email field changed!')">
 </p>
 
 <p>Address<br>
-<TEXTAREA rows="5" cols="50"></TEXTAREA></p>
+<TEXTAREA rows="5" cols="50" onchange="alert('Address field changed!')"></TEXTAREA></p>
 
 <HR>
 
